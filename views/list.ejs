@@ -4,28 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <!-- Day -->
-    <% if (day === "Sunday" || day === "Saturday") {%>
-    <h1><%= day %> List</h1>
-    <% } else {%>
-    <h1><%= day %> List</h1>
-    <% } %>
-    <!-- Date -->
-    <p>Today is: <%= date %></p>
-    <!-- List -->
-    <ul>
-      <% for(i in items) { %>
-      <li><%= items[i] %></li>
+    <div class="box" id="heading">
+      <!-- Day -->
+      <% if (day === "Sunday" || day === "Saturday") {%>
+      <h1><%= day %> List</h1>
+      <% } else {%>
+      <h1><%= day %> List</h1>
       <% } %>
-    </ul>
-    <!-- Input stuff -->
-    <form action="/" method="post">
-      <input type="text" name="item" autofocus="true" 1 />
-      <button type="submit">Add</button>
-    </form>
+      <!-- Date -->
+      <p>Today is: <%= date %></p>
+    </div>
+
+    <div class="box">
+      <!-- List -->
+      <% for(i in items) { %>
+      <div class="item">
+        <input type="checkbox" />
+        <p><%= items[i] %></p>
+      </div>
+      <% } %>
+      <!-- Input stuff -->
+      <form action="/" method="post">
+        <input
+          type="text"
+          name="item"
+          autofocus="true"
+          autocomplete="off"
+          placeholder="New Item"
+        />
+        <button type="submit" name="button">+</button>
+      </form>
+    </div>
   </body>
 </html>
