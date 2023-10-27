@@ -7,6 +7,7 @@ const app = express();
 
 //body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 //path
 import { fileURLToPath } from "url";
@@ -22,7 +23,10 @@ let items = [];
 
 app.get("/", function (req, res) {
   let today = new Date();
-  let date = today.toLocaleDateString("en-us", { day: "numeric", month: "long" });
+  let date = today.toLocaleDateString("en-us", {
+    day: "numeric",
+    month: "long",
+  });
   let day = today.toLocaleDateString("en-us", { weekday: "long" });
   res.render("list", { date: date, day: day, items: items });
 });
