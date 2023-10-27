@@ -22,9 +22,9 @@ let items = [];
 
 app.get("/", function (req, res) {
   let today = new Date();
-  let day = "";
-  day = today.toLocaleDateString("en-us", { weekday: "long" });
-  res.render("list", { day: day, items: items });
+  let date = today.toLocaleDateString("en-us", { day: "numeric", month: "long" });
+  let day = today.toLocaleDateString("en-us", { weekday: "long" });
+  res.render("list", { date: date, day: day, items: items });
 });
 
 app.post("/", function (req, res) {
