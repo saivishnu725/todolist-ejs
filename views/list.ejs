@@ -4,35 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
-    <style>
-      body {
-        background-color: #171717;
-      }
-      li {
-        color: #cb2026;
-      }
-    </style>
   </head>
 
   <body>
+    <!-- Day -->
     <% if (day === "Sunday" || day === "Saturday") {%>
-    <h1 style="color: purple"><%= day %> List</h1>
+    <h1><%= day %> List</h1>
     <% } else {%>
-    <h1 style="color: #ff8000"><%= day %> List</h1>
+    <h1><%= day %> List</h1>
     <% } %>
-
+    <!-- Date -->
+    <p>Today is: <%= date %></p>
     <br /><br />
-
+    <!-- List -->
     <ul>
       <% for(i in items) { %>
       <li><%= items[i] %></li>
       <% } %>
     </ul>
-
     <br /><br />
-
+    <!-- Input stuff -->
     <form action="/" method="post">
-      <input type="text" name="item" />
+      <input type="text" name="item" autofocus="true" 1 />
       <button type="submit">Add</button>
     </form>
   </body>
