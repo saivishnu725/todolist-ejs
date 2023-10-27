@@ -12,7 +12,18 @@
     <% } else {%>
     <h1 style="color: #ff8000"><%= day %> List</h1>
     <% } %>
+
     <br /><br />
+
+    <ul>
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+      <li><%= item %></li>
+    </ul>
+
+    <br /><br />
+
     <form action="/" method="post">
       <input type="text" name="item" />
       <button type="submit">Add</button>

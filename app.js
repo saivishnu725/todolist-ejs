@@ -17,11 +17,19 @@ const __dirname = dirname(__filename);
 //use ejs
 app.set("view engine", "ejs");
 
+// entered item
+let item = "";
+
 app.get("/", function (req, res) {
   let today = new Date();
   let day = "";
   day = today.toLocaleDateString("en-us", { weekday: "long" });
-  res.render("list", { day: day });
+  res.render("list", { day: day, item: item });
+});
+
+app.post("/", function (req, res) {
+  item = req.body.item;
+  res.redirect("/");
 });
 
 app.listen(3000, function () {
