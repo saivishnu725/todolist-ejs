@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
+    <style>
+      body {
+        background-color: #171717;
+      }
+      li {
+        color: #cb2026;
+      }
+    </style>
   </head>
 
   <body>
@@ -19,7 +27,9 @@
       <li>one</li>
       <li>two</li>
       <li>three</li>
-      <li><%= item %></li>
+      <% for(i in items) { %>
+      <li><%= items[i] %></li>
+      <% } %>
     </ul>
 
     <br /><br />
